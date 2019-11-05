@@ -1,12 +1,23 @@
+node('node') {
+
+
+    currentBuild.result = "SUCCESS"
+
+    try {
+
+       stage('Checkout'){
+
+          checkout scm
+       }
 pipeline {
-    agent none 
-    stages {
-        stage('Example Build') {
-            agent { docker 'impavithra/apache' } 
-            steps {
-                echo 'Hello'
-                sh 'apache --version'
+         agent { docker { image 'impavithra/apache' } }
+         stages {
+                 stage('build') {
+                 steps {
+                        sh 'php --version'
             }
         }
     }
 }
+}
+} 
