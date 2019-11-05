@@ -1,10 +1,4 @@
-node('node') {
-
-    stage('Checkout'){
-
-        checkout scm
-       }
-    pipeline {
+pipeline {
          agent { docker { image 'impavithra/apache' } }
             stages {
                  stage('build') {
@@ -13,5 +7,4 @@ node('node') {
             }
         }
     }
-  }
 }
