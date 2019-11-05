@@ -1,9 +1,10 @@
 pipeline {
-         agent { docker { image 'impavithra/apache:tagname' } }
+         agent { 
+                  Dockerfile true }
             stages {
                  stage('build') {
                     steps {
-                        sh 'php --version'
+                        sh 'whoami'
             }
         }
     }
