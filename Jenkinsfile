@@ -1,5 +1,5 @@
 pipeline {
-         agent { docker { image 'impavithra/apache' } }
+         agent { docker { image 'impavithra/apache:tagname' } }
             stages {
                  stage('build') {
                     steps {
